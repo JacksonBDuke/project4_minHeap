@@ -18,57 +18,7 @@ public class Event {
         event = null;
     }
     
-    /**
-    public class Arrival extends Event{
-    private final String eventType = "Arrival";
-    public Arrival(double d){
-                timeOfEvent = d;
-            }
-            
-            public double getTime(){
-                return timeOfEvent;
-            }
-            
-            public void print(){
-                System.out.println("Event " + eventType + "\t" + timeOfEvent);
-            }
-    }
-    private class EndOfService extends Event{
-        private final String eventType = "EndOfService";
-
-
-        public EndOfService(double d){
-            timeOfEvent = d;
-        }
-
-        public double getTime(){
-            return timeOfEvent;
-        }
-
-        public void print(){
-            System.out.println("Event " + eventType + "\t" + timeOfEvent);
-        }
-    }
-    * **
-    private class Termination extends Event{
-        private final String eventType = "Termination";
-        private double timeOfEvent;
-
-        public Termination(double d){
-            timeOfEvent = d;
-        }
-        public double getTime(){
-            return timeOfEvent;
-        }
-
-        public void print(){
-            System.out.println("Event " + eventType + "\t" + timeOfEvent);
-        }
-    }
-    
     public void print(){
-        System.out.println("Event " + eventType + "\t" + timeOfEvent);
+        System.out.println(eventType + "Event at time " + timeOfEvent + ".");
     }
-    * 
-    * */
 }

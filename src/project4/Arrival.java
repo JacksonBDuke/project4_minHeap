@@ -22,7 +22,9 @@ public class Arrival extends Event{
             return timeOfEvent;
         }
 
+        /*
         public void print(){
             System.out.println("Event " + eventType + "\t" + timeOfEvent);
         }
+        */
 }
