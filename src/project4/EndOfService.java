@@ -10,8 +10,6 @@ package project4;
  * @author Jackson
  */
 public class EndOfService extends Event{
-    //private final String eventType = "EndOfService";
-
     public EndOfService(double d){
         timeOfEvent = d;
         eventType = "Termination";
@@ -19,9 +17,5 @@ public class EndOfService extends Event{
 
     public double getTime(){
         return timeOfEvent;
-    }
-
-    public void print(){
-        System.out.println("Event " + eventType + "\t" + timeOfEvent);
     }
 }

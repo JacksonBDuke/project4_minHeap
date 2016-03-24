@@ -10,17 +10,11 @@ package project4;
  * @author Jackson
  */
 public class Termination extends Event{
-    //private final String eventType = "Termination";
-
     public Termination(double d){
         timeOfEvent = d;
         eventType = "Termination";
     }
     public double getTime(){
         return timeOfEvent;
-    }
-
-    public void print(){
-        System.out.println("Event " + eventType + "\t" + timeOfEvent);
     }
 }

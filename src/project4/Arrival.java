@@ -10,21 +10,12 @@ package project4;
  * @author Jackson
  */
 public class Arrival extends Event{
-    
-    //private final String eventType = "Arrival";
-    
     public Arrival(double d){
         timeOfEvent = d;
         eventType = "Arrival";
     }
             
-        public double getTime(){
-            return timeOfEvent;
-        }
-
-        /*
-        public void print(){
-            System.out.println("Event " + eventType + "\t" + timeOfEvent);
-        }
-        */
+    public double getTime(){
+        return timeOfEvent;
+    }
 }
