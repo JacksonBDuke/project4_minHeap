@@ -16,6 +16,8 @@ public class Handler {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Arrival event = new Arrival(0.2);
+        event.print();
     }
     
 }
