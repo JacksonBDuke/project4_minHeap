@@ -77,7 +77,7 @@ public class Handler {
                     
                 //Delete Min
                 case 5:
-                    
+                    deleteMin();
                     break;
                     
                 //Quit
@@ -100,7 +100,19 @@ public class Handler {
         boolean bDone = true;
         String e;
         double d;
-        Event eventToAdd = new Event();
+        Event eventToAdd = getEvent();
+        
+        System.out.println("Event to add...");
+        eventToAdd.print();
+        testHeap.add(eventToAdd);
+        System.out.println("...done.");
+    }
+    
+    public static Event getEvent(){
+        boolean bDone = true;
+        String e;
+        double d;
+        Event gotEvent = new Event();
         while(bDone){
             System.out.print("Event type: ");
             e = oScan.nextLine();
@@ -109,15 +121,15 @@ public class Handler {
             switch(e){
                 case "ARRIVAL":
                     System.out.print("Time of event: ");
-                    eventToAdd = new Arrival(getDouble());
+                    gotEvent= new Arrival(getDouble());
                     bDone = false;
                     break;
                 case "ENDOFSERVICE":
-                    eventToAdd = new EndOfService(getDouble());
+                    gotEvent = new EndOfService(getDouble());
                     bDone = false;
                     break;
                 case "TERMINATION":
-                    eventToAdd = new Termination(getDouble());
+                    gotEvent = new Termination(getDouble());
                     bDone = false;
                     break;
                 default:
@@ -125,15 +137,11 @@ public class Handler {
                     break;
             }
         }
-        
-        System.out.println("Event to add...");
-        eventToAdd.print();
-        testHeap.add(eventToAdd);
-        System.out.println("...done.");
+        return gotEvent;
     }
     
     public static void insert(){
-        
+        testHeap.insert(getEvent());
     }
     
     public static void printArray(){
@@ -141,7 +149,11 @@ public class Handler {
     }
     
     public static void buildHeap(){
-        
+        testHeap.buildHeap();
+    }
+    
+    public static void deleteMin(){
+        testHeap.deleteMin();
     }
     
     public static int getInt(){

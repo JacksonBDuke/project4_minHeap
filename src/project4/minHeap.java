@@ -25,6 +25,18 @@ public class minHeap {
         ++arrayIndex;
     }
     
+    public void insert(Event e){
+        
+    }
+    
+    public void buildHeap(){
+        
+    }
+    
+    public void deleteMin(){
+        
+    }
+    
     public void printArray(){
         System.out.println("Printing array...");
         for(int i = 0; i < arrayIndex; ++i){
