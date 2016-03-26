@@ -5,18 +5,22 @@
  */
 package project4;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.InputMismatchException;
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
  *
- * @author Jackson
+ * @author Jackson Duke
  */
 public class Handler {
     static Scanner oScan = new Scanner(System.in);
     private static Event event = new Event();
     private static minHeap testHeap = new minHeap();
     private static boolean bDone = false;
+    private static boolean bHeapBuilt = false;
     private static final String MENU_STRING = "MINHEAP MENU\n\t"+
             "1. Add Event\n\t"+
             "2. Insert\n\t"+
@@ -43,22 +47,32 @@ public class Handler {
             switch(iInput){
                 //Add Event
                 case 1:
-                    addEvent();
+                    if(!bHeapBuilt){
+                        addEvent();
+                    }
+                    else{
+                        System.out.println("Can't add into the heap. Use 'Insert'.");
+                    }
                     break;
                     
                 //Insert
                 case 2:
-                    
+                    if(bHeapBuilt){
+                        insert();
+                    }
+                    else{
+                        System.out.println("Can't insert into the heap. Use build heap first, or use 'Add'.");
+                    }
                     break;
                     
                 //Print Array
                 case 3:
-                    
+                    printArray();
                     break;
                     
                 //Build Heap
                 case 4:
-                    
+                    buildHeap();
                     break;
                     
                 //Delete Min
@@ -116,6 +130,18 @@ public class Handler {
         eventToAdd.print();
         testHeap.add(eventToAdd);
         System.out.println("...done.");
+    }
+    
+    public static void insert(){
+        
+    }
+    
+    public static void printArray(){
+        testHeap.printArray();
+    }
+    
+    public static void buildHeap(){
+        
     }
     
     public static int getInt(){

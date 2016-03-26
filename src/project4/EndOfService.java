@@ -7,7 +7,7 @@ package project4;
 
 /**
  *
- * @author Jackson
+ * @author Jackson Duke
  */
 public class EndOfService extends Event{
     public EndOfService(double d){

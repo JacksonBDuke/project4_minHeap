@@ -7,7 +7,7 @@ package project4;
 
 /**
  *
- * @author Jackson
+ * @author Jackson Duke
  */
 public class Arrival extends Event{
     public Arrival(double d){

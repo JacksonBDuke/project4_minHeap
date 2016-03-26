@@ -5,14 +5,18 @@
  */
 package project4;
 
+import java.text.DecimalFormat;
+
 /**
  *
- * @author Jackson
+ * @author Jackson Duke
  */
 public class Event {
     Event event;
     public double timeOfEvent;
     public String eventType;
+    
+    DecimalFormat df = new DecimalFormat("00.00");
     
     public Event(){
         event = null;
@@ -23,6 +27,6 @@ public class Event {
     }
     
     public void print(){
-        System.out.println(eventType + "Event at time " + timeOfEvent + ".");
+        System.out.println(eventType + "Event at time " + df.format(timeOfEvent) + ".");
     }
 }

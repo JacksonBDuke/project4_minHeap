@@ -7,7 +7,7 @@ package project4;
 
 /**
  *
- * @author Jackson
+ * @author Jackson Duke
  */
 public class minHeap {
     minHeap theHeap;
@@ -16,11 +16,20 @@ public class minHeap {
     
     minHeap(){
         theHeap = null;
-        theArray = null;
+        //theArray = null;
         arrayIndex = 0;
     }
     
     public void add(Event e){
         theArray[arrayIndex] = e;
+        ++arrayIndex;
+    }
+    
+    public void printArray(){
+        System.out.println("Printing array...");
+        for(int i = 0; i < arrayIndex; ++i){
+            theArray[i].print();
+        }
+        System.out.println("...done.");
     }
 }

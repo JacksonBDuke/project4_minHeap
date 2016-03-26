@@ -7,7 +7,7 @@ package project4;
 
 /**
  *
- * @author Jackson
+ * @author Jackson Duke
  */
 public class Termination extends Event{
     public Termination(double d){
