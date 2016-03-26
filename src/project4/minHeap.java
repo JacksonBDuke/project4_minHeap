@@ -10,5 +10,17 @@ package project4;
  * @author Jackson
  */
 public class minHeap {
+    minHeap theHeap;
+    Event[] theArray = new Event[10];
+    int arrayIndex;
     
+    minHeap(){
+        theHeap = null;
+        theArray = null;
+        arrayIndex = 0;
+    }
+    
+    public void add(Event e){
+        theArray[arrayIndex] = e;
+    }
 }

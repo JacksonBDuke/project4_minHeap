@@ -18,6 +18,10 @@ public class Event {
         event = null;
     }
     
+    public double getDuration(){
+        return timeOfEvent;
+    }
+    
     public void print(){
         System.out.println(eventType + "Event at time " + timeOfEvent + ".");
     }

@@ -15,6 +15,7 @@ import java.util.Scanner;
 public class Handler {
     static Scanner oScan = new Scanner(System.in);
     private static Event event = new Event();
+    private static minHeap testHeap = new minHeap();
     private static boolean bDone = false;
     private static final String MENU_STRING = "MINHEAP MENU\n\t"+
             "1. Add Event\n\t"+
@@ -42,7 +43,7 @@ public class Handler {
             switch(iInput){
                 //Add Event
                 case 1:
-                    
+                    addEvent();
                     break;
                     
                 //Insert
@@ -81,20 +82,56 @@ public class Handler {
         }
     }
     
+    public static void addEvent(){
+        boolean bDone = true;
+        String e;
+        double d;
+        Event eventToAdd = new Event();
+        while(bDone){
+            System.out.print("Event type: ");
+            e = oScan.nextLine();
+            e = e.toUpperCase();
+            
+            switch(e){
+                case "ARRIVAL":
+                    System.out.print("Time of event: ");
+                    eventToAdd = new Arrival(getDouble());
+                    bDone = false;
+                    break;
+                case "ENDOFSERVICE":
+                    eventToAdd = new EndOfService(getDouble());
+                    bDone = false;
+                    break;
+                case "TERMINATION":
+                    eventToAdd = new Termination(getDouble());
+                    bDone = false;
+                    break;
+                default:
+                    System.out.println("Please enter a valid event type. Your options are 'Arrival' 'EndOfService' and 'Termination'.");
+                    break;
+            }
+        }
+        
+        System.out.println("Event to add...");
+        eventToAdd.print();
+        testHeap.add(eventToAdd);
+        System.out.println("...done.");
+    }
+    
     public static int getInt(){
         int i = 0;
-        boolean b = true;
-        while(b){
+        boolean bDone = true;
+        while(bDone){
             try{
                 i = oScan.nextInt();
                 oScan.nextLine();
-                b = false;
+                bDone = false;
             }
             catch(InputMismatchException e){
                 oScan.next();
                 System.out.println("Please enter a valid integer.");
                 System.out.print(MENU_STRING);
-                b = true;
+                bDone = true;
             }
         }
         return i;
@@ -102,17 +139,17 @@ public class Handler {
     
     public static double getDouble(){
         double d = -1.0;
-        boolean b = true;
-        while(b){
+        boolean bDone = true;
+        while(bDone){
             try{
                 d = oScan.nextDouble();
                 oScan.nextLine();
-                b = false;
+                bDone = false;
             }
             catch(InputMismatchException e){
                 oScan.next();
                 System.out.println("Please enter a valid decimal number.");
-                b = true;
+                bDone = true;
             }
         }
         return d;
