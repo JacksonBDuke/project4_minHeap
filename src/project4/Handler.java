@@ -108,38 +108,6 @@ public class Handler {
         System.out.println("...done.");
     }
     
-    public static Event getEvent(){
-        boolean bDone = true;
-        String e;
-        double d;
-        Event gotEvent = new Event();
-        while(bDone){
-            System.out.print("Event type: ");
-            e = oScan.nextLine();
-            e = e.toUpperCase();
-            
-            switch(e){
-                case "ARRIVAL":
-                    System.out.print("Time of event: ");
-                    gotEvent= new Arrival(getDouble());
-                    bDone = false;
-                    break;
-                case "ENDOFSERVICE":
-                    gotEvent = new EndOfService(getDouble());
-                    bDone = false;
-                    break;
-                case "TERMINATION":
-                    gotEvent = new Termination(getDouble());
-                    bDone = false;
-                    break;
-                default:
-                    System.out.println("Please enter a valid event type. Your options are 'Arrival' 'EndOfService' and 'Termination'.");
-                    break;
-            }
-        }
-        return gotEvent;
-    }
-    
     public static void insert(){
         testHeap.insert(getEvent());
     }
@@ -191,6 +159,38 @@ public class Handler {
             }
         }
         return d;
+    }
+    
+    public static Event getEvent(){
+        boolean bDone = true;
+        String e;
+        double d;
+        Event gotEvent = new Event();
+        while(bDone){
+            System.out.print("Event type: ");
+            e = oScan.nextLine();
+            e = e.toUpperCase();
+            
+            switch(e){
+                case "ARRIVAL":
+                    System.out.print("Time of event: ");
+                    gotEvent= new Arrival(getDouble());
+                    bDone = false;
+                    break;
+                case "ENDOFSERVICE":
+                    gotEvent = new EndOfService(getDouble());
+                    bDone = false;
+                    break;
+                case "TERMINATION":
+                    gotEvent = new Termination(getDouble());
+                    bDone = false;
+                    break;
+                default:
+                    System.out.println("Please enter a valid event type. Your options are 'Arrival' 'EndOfService' and 'Termination'.");
+                    break;
+            }
+        }
+        return gotEvent;
     }
     
     public static void buildTestHeap(){
